@@ -1,0 +1,35 @@
+:root {
+  --primary-color: #2bce56;
+    --white-color: #fff;
+    --dark-color: #464749;
+  
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  padding: 1rem 2rem;
+}
+
+body {
+  line-height: 1.6rem;
+  font-size: 1.6rem;
+margin: 0 auto;
+}
+
+*,
+*::after,
+*::before {
+  outline: none;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+  transition: all 400ms ease;
+}
+
+.btn:hover{
+  background-color: #33be58;
+}
