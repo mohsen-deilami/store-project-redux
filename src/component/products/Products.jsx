@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import style from './products.module.css'
 import { useDispatch , useSelector } from 'react-redux'
 import { fetchProducts } from '../../features/productSlice'
+import Card from '../card/Card'
 
 export default function Products() {
 
@@ -14,7 +15,9 @@ export default function Products() {
    },[])
   return (
     <div>
-      
+      {products.products.length ? (
+       <Card product={products.products}/>
+      ) : null}
     </div>
   )
 }
