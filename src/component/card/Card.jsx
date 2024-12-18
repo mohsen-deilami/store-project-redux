@@ -8,10 +8,8 @@ import {shortenText} from './../../services/helper'
 export default function Card({product}) {
     const [count, setCount] = useState(0);
     console.log('product:=>', product);
-    const [products, setProducts]=useState([]);
-    useEffect(()=>
-        setProducts(product)
-        ,[])
+   
+  
     const clickHandler = (actionType) => {
         switch (actionType) {
           case "ADD_PRODUCT": {
@@ -40,10 +38,12 @@ export default function Card({product}) {
       };
   return (
      <>
- {products ? (
-        <div className={styles.card}>
+ {product ? (
+    product.map(product=>(
+
+        <div className={styles.card} key={product.id}>
       
-          <img src={products.image} alt="" />
+          <img src={product.image} alt="" />
        
     
     
@@ -77,6 +77,7 @@ export default function Card({product}) {
           </div>
         </div> 
       </div> 
+    ))
 ) : null}
    
             </>
