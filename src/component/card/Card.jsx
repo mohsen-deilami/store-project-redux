@@ -5,11 +5,15 @@ import { TbListDetails } from "react-icons/tb";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { shortenText } from "./../../services/helper";
+import { useDispatch } from "react-redux";
 export default function Card({ product }) {
+  const dispatch=useDispatch();
   const [count, setCount] = useState(0);
   console.log( product);
 
   const clickHandler = (actionType) => {
+    console.log(actionType);
+    
     switch (actionType) {
       case "ADD_PRODUCT": {
         dispatch({ type: "ADD_PRODUCT", payload: product });
