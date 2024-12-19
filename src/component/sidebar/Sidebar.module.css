@@ -21,6 +21,10 @@
         color: var(--primary-color);
     }
 }
+.sidebar ul{
+    text-align: left;
+    margin-left: 0 !important;
+}
 
 .sidebar li {
     font-size: 1.4rem;
@@ -28,6 +32,7 @@
     cursor: pointer;
     transition: all .4s ease-in-out;
     cursor: pointer;
+    list-style-type: none;
 }
 
 .sidebar li:hover {

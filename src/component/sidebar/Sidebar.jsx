@@ -4,7 +4,7 @@ import { TbCategoryMinus } from "react-icons/tb";
 import api from "./../../services/services";
 
 function Sidebar() {
-/*   const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -15,7 +15,7 @@ function Sidebar() {
       }
     };
     fetchCategories();
-  }, []); */
+  }, []); 
   return (
     <>
       <div className={styles.sidebar}>
@@ -24,17 +24,17 @@ function Sidebar() {
           Categories
         </button>
         <ul >
-         {/*  <li   onClick={() =>categotyHandler("all") } className={!query.category  ? styles.active : null}  > */}
-          <li    >
+          <li    > 
+          
             All
           </li>
-         {/*  {categories.map((category, index) => (
-            <li  key={index}   onClick={() => categotyHandler(category) }
-             className={category === query.category ? styles.active : null}
+      {categories.map((category, index) => (
+            <li  key={index}   
+           
             >
               {category[0].toUpperCase() + category.slice(1)}
             </li>
-          ))} */}
+          ))} 
         </ul>
       </div>
     </>
