@@ -15,8 +15,8 @@ export default function Products() {
   return (
     <div className={styles.container}>
       <div className={styles.products}>
-        {products.products.length ?
-           products.products.map((product) => (
+        {products.products.data.length ?
+           products.products.data.map((product) => (
               <Card product={product} key={product.id} />
             ))
           : null}

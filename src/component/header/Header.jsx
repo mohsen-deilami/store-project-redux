@@ -1,9 +1,10 @@
 import React from 'react'
-
 import styles from './Header.module.css';
 import { SlBasket } from "react-icons/sl";
+import { useSelector } from 'react-redux';
 
 function Header() {
+
 
   return (
     <div className={styles.header}>

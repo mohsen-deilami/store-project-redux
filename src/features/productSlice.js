@@ -6,13 +6,7 @@ const initialState={
     products :[] , 
     error:""
 }
-const fetchProducts=createAsyncThunk('products/fetchProduts',()=>{
-   
-         return  fetch("http://fakestoreapi.com/products")
-          .then(response=>response.json())
-          .then(data=>data)   
-   
-})
+const fetchProducts=createAsyncThunk('products/fetchProduts',()=>  api.get("/products"))
 const productSlice=createSlice({
     name:'products',
     initialState,
