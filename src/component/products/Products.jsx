@@ -38,8 +38,8 @@ export default function Products() {
       <div className={styles.products}>
       {loading && <Loader />}
         {
-        displayed.data ?
-        displayed.data.map((product) => (
+        displayed ?
+        displayed.map((product) => (
               <Card product={product} key={product.id} />
             ))
           : null}
