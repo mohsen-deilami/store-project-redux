@@ -43,16 +43,19 @@ export default function Card({ product }) {
     <>
       {product ? (
         <div className={styles.card}>
-          <Link  className={styles.link}>
+          
+          <Link to={`/products/${product.id}`} className={styles.link}>
         <img src={product.image} alt="" />
       </Link>
 
           <h2 key={product.id}>{shortenText(product.title)}</h2>
           <p>{product.price}$</p>
           <div className={styles.icons}>
-            <button>
-              <TbListDetails className={styles.details} />
-            </button>
+          <button>
+          <Link to={`/products/${product.id}`}>
+            <TbListDetails className={styles.details} />
+          </Link>
+        </button>
             <div className={styles.baskets}>
               {count === 1 && (
                 <button onClick={() => clickHandler("REMOVE_PRODUCT")}>
