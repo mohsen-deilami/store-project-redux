@@ -39,7 +39,9 @@ export default function Card({ product }) {
     <>
       {product ? (
         <div className={styles.card}>
-          <img src={product.image} alt="" />
+          <a  className={styles.link}>
+        <img src={product.image} alt="" />
+      </a>
 
           <h2 key={product.id}>{shortenText(product.title)}</h2>
           <p>{product.price}$</p>

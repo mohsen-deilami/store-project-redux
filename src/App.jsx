@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Navigate, Routes, Route } from "react-router-dom";
 import styles from "./App.module.css";
-
-import Products from './component/products/Products';
+import Homepage from './pages/Homepage/Homepage';
+import Header from './component/header/Header';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,8 +10,9 @@ function App() {
   return (
    
     <div className={styles.container}>
-<Products/>
-      react
+      <Header/>
+<Homepage/>
+     
     {/* <Routes>
           <Route path="/" element={<Navigate to="/products" replace />} />
           <Route path="/products" element={<Products />} />

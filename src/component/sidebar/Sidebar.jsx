@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import styles from "./Sidebar.module.css";
 import { TbCategoryMinus } from "react-icons/tb";
-import api from "../../services/config";
+import api from "./../../services/services";
 
-function Sidebar({query, categotyHandler }) {
-  const [categories, setCategories] = useState([]);
+function Sidebar() {
+/*   const [categories, setCategories] = useState([]);
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -15,7 +15,7 @@ function Sidebar({query, categotyHandler }) {
       }
     };
     fetchCategories();
-  }, []);
+  }, []); */
   return (
     <>
       <div className={styles.sidebar}>
@@ -24,16 +24,17 @@ function Sidebar({query, categotyHandler }) {
           Categories
         </button>
         <ul >
-          <li   onClick={() =>categotyHandler("all") } className={!query.category  ? styles.active : null}  >
+         {/*  <li   onClick={() =>categotyHandler("all") } className={!query.category  ? styles.active : null}  > */}
+          <li    >
             All
           </li>
-          {categories.map((category, index) => (
+         {/*  {categories.map((category, index) => (
             <li  key={index}   onClick={() => categotyHandler(category) }
              className={category === query.category ? styles.active : null}
             >
               {category[0].toUpperCase() + category.slice(1)}
             </li>
-          ))}
+          ))} */}
         </ul>
       </div>
     </>
