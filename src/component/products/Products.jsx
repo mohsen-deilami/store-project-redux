@@ -8,11 +8,10 @@ import { searchProducts, selectCategory, createQueryObject ,initialQuery} from "
 import Loader from "../../pages/loader/Loader";
 
 export default function Products() {
-  const {products,loading} = useSelector((state) => state.products);
+  const {products,loading} = useSelector((state) => state.product);
   const [displayed, setDisplayed] = useState([]);
   const [query, setQuery] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
-console.log(displayed);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,7 +19,6 @@ console.log(displayed);
   }, []);
 
   
-
   useEffect(() => {
     setDisplayed(products.data);
     setQuery(initialQuery(searchParams)) ;   //fetch query string from url

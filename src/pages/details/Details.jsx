@@ -1,30 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./Details.module.css";
 import { Link, useParams } from "react-router-dom";
 import { FaLongArrowAltLeft } from "react-icons/fa";
-import api from "../../services/services";
 import { CgInfinity } from "react-icons/cg";
 import { FiArrowUpRight } from "react-icons/fi";
 import Loader from './../loader/Loader'
+import { useSelector } from "react-redux";
 
 function Details() {
-  const [product, setProduct] = useState([]);
-  const params = useParams();
+  const {id} = useParams();
+  const product=useSelector(state => state.product.products.data.find(product => product.id === +id))
+// state.product =====> com from store
+// stat.product.products ====> com from initialstate
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-      const response = await api.get(`/products/${params.id}`);
-      setProduct(response.data)
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    fetchProduct();
+
   }, []);
-console.log(product);
+
 
   return (
-    <div className={styles.details}>
+   
+     <div className={styles.details}>
       {!! product ? (
 
       <>

@@ -9,7 +9,6 @@ import { useDispatch } from "react-redux";
 export default function Card({ product }) {
   const dispatch=useDispatch();
   const [count, setCount] = useState(0);
-  console.log( product);
 
   const clickHandler = (actionType) => {
     console.log(actionType);
