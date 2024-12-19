@@ -1,0 +1,40 @@
+.sidebar {
+    border-radius: .5rem;
+    border: dotted .1rem var(--primary-color);
+    padding: .5rem;
+    width: 16rem;
+    margin-right: 5rem;
+}
+
+.sidebar button {
+    padding: .5rem;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+
+    i {
+        padding: .5rem 1rem 0 .5rem;
+        color: var(--primary-color);
+    }
+}
+
+.sidebar li {
+    font-size: 1.4rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    font-size: 1.6rem;
+
+}
+.active{
+    background-color: var(--primary-color);
+    border-radius: .5rem;
+}
