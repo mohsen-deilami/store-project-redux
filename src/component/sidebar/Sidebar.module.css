@@ -2,7 +2,7 @@
     border-radius: .5rem;
     border: dotted .1rem var(--primary-color);
     padding: .5rem;
-    width: 16rem;
+   
     margin-right: 5rem;
 }
 
@@ -23,7 +23,7 @@
 }
 .sidebar ul{
     text-align: left;
-    margin-left: 0 !important;
+    padding: 0 !important;
 }
 
 .sidebar li {

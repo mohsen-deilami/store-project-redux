@@ -50,11 +50,19 @@ const sumProducts = products => {
 return{itemsCounter,totalPrice};
 
 };
+const sumPrice=products=>{
+  console.log ('sumproducts',products)
+}
+const sumQuantity=products =>{
+  
+  console.log ('sumquantity',products)
+}
 export {
   searchProducts,
   selectCategory,
   createQueryObject,
   initialQuery,
-  sumProducts,
+  sumPrice,
+  sumQuantity,
   shortenText
 };

@@ -1,0 +1,49 @@
+.checkout{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    margin: 3.5rem 0;
+}
+.sidebar{
+    margin-right: 2rem;
+    border: dotted .1rem #535050;
+    border-radius: 1rem;
+    height: 12rem;
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+}
+.sidebar div{
+    padding: .5rem;
+    display: flex;
+    gap: .4rem;
+    color: var(--primary-color);
+}
+.sidebar span{
+    color: #000;
+}
+.sidebar button{
+    margin: 1.5rem 0 0 0 ;
+    text-align: center;
+    align-items: center;
+    width: 95%;
+    padding: .3rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: var(--primary-color);
+}
+.warn p{
+    font-size: 4rem;
+    padding: 2rem;
+    margin: 5rem 1rem;
+}
+.warn button {
+    background-color: var(--primary-color);
+    color: #FFF;
+    padding: .5rem .8rem;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    margin: .5rem;
+  
+    height: 40px;
+}
