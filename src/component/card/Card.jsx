@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { shortenText } from "./../../services/helper";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { addItem } from "../../features/CartSlice";
+import { addItem , removeItem, increase,  decrease } from "../../features/CartSlice";
 
 export default function Card({ product }) {
   const state=useSelector(store=>store.cart)
@@ -68,7 +68,7 @@ export default function Card({ product }) {
                 </button>
               )}
               {count > 1 && (
-                <button onClick={() => {dispatch(decrease(product)); console.log('yrres');
+                <button onClick={() => {dispatch(decrease(product)); 
                   setCount((count) => count - 1);}}>
                     -
                      </button>

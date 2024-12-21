@@ -12,13 +12,10 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       if (!state.selectedItems.find((p) => p.id == action.payload.id)) {
-        state.selectedItems.push({
-          ...action.payload,
-          quantity: 1,
-        });
+        state.selectedItems.push({...action.payload, quantity: 1});
         state.checkout = false;
-        sumQuantity(state.selectedItems);
-        sumPrice(state.selectedItems);
+       state.itemsCounter= sumQuantity(state.selectedItems);
+        state.totalPrice= sumPrice(state.selectedItems);
       }
     },
     removeItem: (state, action) => {
@@ -27,20 +24,20 @@ const cartSlice = createSlice({
       );
       state.selectedItems = remainProducts;
 
-      sumQuantity(state.selectedItems);
-      sumPrice(state.selectedItems);
+      state.itemsCounter= sumQuantity(state.selectedItems);
+      state.totalPrice= sumPrice(state.selectedItems);
     },
     increase:(state,action) => {
         const index=state.selectedItems.findIndex(p=>p.id === action.payload.id);
         state.selectedItems[index].quantity ++;
-        sumQuantity(state.selectedItems);
-        sumPrice(state.selectedItems);
+        state.itemsCounter= sumQuantity(state.selectedItems);
+        state.totalPrice= sumPrice(state.selectedItems);
     },
     decrease:(state, action)=>{
         const index=state.selectedItems.findIndex(p=>p.id === action.payload.id);
         state.selectedItems[index].quantity --;
-        sumQuantity(state.selectedItems);
-        sumPrice(state.selectedItems);
+        state.itemsCounter= sumQuantity(state.selectedItems);
+        state.totalPrice= sumPrice(state.selectedItems);
 
     },
     checkout: (state)=>{
