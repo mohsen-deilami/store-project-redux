@@ -13,37 +13,8 @@ export default function Card({ product }) {
   const state=useSelector(store=>store.cart)
   const dispatch=useDispatch();
   const [count, setCount] = useState(0);
-  console.log(state);
-  const clickHandler = (actionType) => {
-   
-  
-  
-    
-   /*  switch (actionType) {
-      case "ADD_PRODUCT": {
-        dispatch({ type: "ADD_PRODUCT", payload: product });
-        setCount((count) => count + 1);
-        return;
-      }
-      case "DECREASE_PRODUCT": {
-        setCount((count) => count - 1);
-        dispatch({ type: "DECREASE_PRODUCT", payload: product });
-        return;
-      }
-      case "INCREASE_PRODUCT": {
-        setCount((count) => count + 1);
-        dispatch({ type: "INCREASE_PRODUCT", payload: product });
-        return;
-      }
-      case "REMOVE_PRODUCT": {
-        setCount((count) => count - 1);
-        dispatch({ type: "REMOVE_PRODUCT", payload: product });
-        return;
-      }
-      default:
-        throw new Error("somthing wnt wrong");
-    } */
-  };
+  console.log(state.selectedItems);
+
   return (
     <>
       {product ? (
