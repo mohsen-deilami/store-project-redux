@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import { TbChecklist } from "react-icons/tb";
 import { FaHashtag } from "react-icons/fa";
 import { BsPatchCheck } from "react-icons/bs";
-//import BasketCard from "../BasketCard/BasketCard";
+import Basket from "../../component/basket/Basket";
 import { Link } from "react-router-dom";
 function Checkout() {
-  const state = useSelector(state=>state.cart.selectedItems);
+  const state = useSelector(state=>state.cart);
 /*   const checkoutHandler=()=>{
     dispatch({ type: 'checkout'});
   } */
@@ -29,15 +29,15 @@ function Checkout() {
               Status :
               <span>{state.checkout === true ? "Complete" : "Pending..."}</span>
             </div>
-            <Link to='/products'>
+            <Link to='/homepage'>
             <button onClick={()=>{
               checkoutHandler()}}>Checkout</button>
             </Link> 
           </div>
           <div className={styles.main}>
-          {/*   {state.selectedItems.map((product) => (
-           <BasketCard product={product} key={product.id}/>
-            ))} */}
+           {state.selectedItems.map((product) => (
+           <Basket product={product} key={product.id}/>
+            ))} 
           </div>
         </div>
       ) : (
