@@ -13,8 +13,6 @@ function App() {
   return (
     <div className={styles.container}>
       <Header />
-  
-
      <Routes>
           <Route path="/" element={<Navigate to="/homepage" replace />} />
           <Route path="/homepage" element={<Homepage />} />

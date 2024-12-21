@@ -9,18 +9,14 @@ import { searchProducts, selectCategory, createQueryObject ,initialQuery} from "
 import Loader from "../../pages/loader/Loader";
 export default function Homepage() {
   const {products,loading} = useSelector((state) => state.product);
-  
-  const [displayed, setDisplayed] = useState([]);
+    const [displayed, setDisplayed] = useState([]);
   const [query, setQuery] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
-  
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
-  
-
-  
+    
   useEffect(() => {
     setDisplayed(products);
     setQuery(initialQuery(searchParams)) ;   //fetch query string from url
@@ -33,11 +29,9 @@ export default function Homepage() {
     setDisplayed(finalProducts);
   }, [query]);
   
-
-  
-
-    const categotyHandler = category =>  setQuery(query => createQueryObject(query, { category }) );
+      const categotyHandler = category =>  setQuery(query => createQueryObject(query, { category }) );
       const searchHandler = searchValue => setQuery(query => createQueryObject(query, { searchValue }) );
+      
   return (
     <div>
        {loading && <Loader />}

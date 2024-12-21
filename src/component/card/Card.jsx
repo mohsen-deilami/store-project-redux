@@ -1,5 +1,5 @@
 import styles from "./card.module.css";
-import { React, useEffect, useState } from "react";
+import { React,  useState } from "react";
 import { TbShoppingBagCheck } from "react-icons/tb";
 import { TbListDetails } from "react-icons/tb";
 import { MdDelete } from "react-icons/md";

@@ -4,8 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux';
 import {removeItem, increase, decrease} from './../../features/CartSlice'
 function Basket({product}) {
-   
-    const state=useSelector(store=>store.cart)
+       const state=useSelector(store=>store.cart)
     const dispatch=useDispatch();
   
   return (

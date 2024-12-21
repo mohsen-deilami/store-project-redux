@@ -11,7 +11,7 @@ const state = useSelector(store =>store.cart);
       <h1>Shop Store</h1>
       <Link to="/checkout">
       <SlBasket className={styles.icon}/>
-      {state.itemsCounter > 0 &&
+      {!!state.itemsCounter  &&
        <span>{state.itemsCounter}</span>
        } 
       </Link>
