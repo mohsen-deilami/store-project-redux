@@ -6,14 +6,20 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { shortenText } from "./../../services/helper";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { addItem } from "../../features/CartSlice";
+
 export default function Card({ product }) {
+  const state=useSelector(store=>store.cart)
   const dispatch=useDispatch();
   const [count, setCount] = useState(0);
-
+  console.log(state);
   const clickHandler = (actionType) => {
-    console.log(actionType);
+   
+  
+  
     
-    switch (actionType) {
+   /*  switch (actionType) {
       case "ADD_PRODUCT": {
         dispatch({ type: "ADD_PRODUCT", payload: product });
         setCount((count) => count + 1);
@@ -36,7 +42,7 @@ export default function Card({ product }) {
       }
       default:
         throw new Error("somthing wnt wrong");
-    }
+    } */
   };
   return (
     <>
@@ -57,23 +63,26 @@ export default function Card({ product }) {
         </button>
             <div className={styles.baskets}>
               {count === 1 && (
-                <button onClick={() => clickHandler("REMOVE_PRODUCT")}>
+                <button onClick={() => {dispatch(removeItem(product)) ;setCount((count) => count - 1);}}>
                   <MdDelete />
                 </button>
               )}
               {count > 1 && (
-                <button onClick={() => clickHandler("DECREASE_PRODUCT")}>
-                  -
-                </button>
+                <button onClick={() => {dispatch(decrease(product)); console.log('yrres');
+                  setCount((count) => count - 1);}}>
+                    -
+                     </button>
+              
               )}
               {count > 0 && <span>{count}</span>}
 
               {count === 0 ? (
-                <button onClick={() => clickHandler("ADD_PRODUCT")}>
+                <button onClick={() => {dispatch(addItem(product)); 
+                 setCount((count) => count + 1);}}>
                   <TbShoppingBagCheck />
                 </button>
               ) : (
-                <button onClick={() => clickHandler("INCREASE_PRODUCT")}>
+                <button onClick={() => {dispatch(increase(product)); setCount((count) => count + 1);}}>
                   +
                 </button>
               )}

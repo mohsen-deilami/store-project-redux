@@ -4,7 +4,7 @@ import { SlBasket } from "react-icons/sl";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 function Header() {
-const state = useSelector(store =>store.cart.selectedItems);
+//const state = useSelector(store =>store.cart.selectedItems);
 
   return (
     <div className={styles.header}>

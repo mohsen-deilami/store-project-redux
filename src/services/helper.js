@@ -51,11 +51,11 @@ return{itemsCounter,totalPrice};
 
 };
 const sumPrice=products=>{
-  console.log ('sumproducts',products)
+  return products.reduce((pre,cur)=>pre + cur.price * cur.quantity , 0).toFixed(2)
 }
 const sumQuantity=products =>{
   
-  console.log ('sumquantity',products)
+  return products.reduce((pre, cur) =>  pre + cur.quantity, 0);
 }
 export {
   searchProducts,
