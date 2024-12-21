@@ -8,9 +8,7 @@ import Basket from "../../component/basket/Basket";
 import { Link } from "react-router-dom";
 function Checkout() {
   const state = useSelector(state=>state.cart);
-/*   const checkoutHandler=()=>{
-    dispatch({ type: 'checkout'});
-  } */
+
   return (
     <>
       {state.itemsCounter > 0 ? (
