@@ -6,9 +6,11 @@ import { FaHashtag } from "react-icons/fa";
 import { BsPatchCheck } from "react-icons/bs";
 import Basket from "../../component/basket/Basket";
 import { Link } from "react-router-dom";
+import { checkout } from "../../features/CartSlice";
+import { useDispatch } from "react-redux";
 function Checkout() {
   const state = useSelector(state=>state.cart);
-
+  const dispatch=useDispatch();
   return (
     <>
       {state.itemsCounter > 0 ? (
@@ -28,8 +30,7 @@ function Checkout() {
               <span>{state.checkout === true ? "Complete" : "Pending..."}</span>
             </div>
             <Link to='/homepage'>
-            <button onClick={()=>{
-              checkoutHandler()}}>Checkout</button>
+            <button onClick={()=>dispatch(checkout())}>Checkout</button>
             </Link> 
           </div>
           <div className={styles.main}>
