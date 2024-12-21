@@ -8,7 +8,6 @@ function Basket({product}) {
     const state=useSelector(store=>store.cart)
     const dispatch=useDispatch();
   
-   
   return (
     <div className={styles.items} key={product.id}>
     <div className={styles.item}>

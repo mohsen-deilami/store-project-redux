@@ -13,7 +13,6 @@ export default function Card({ product }) {
   const state=useSelector(store=>store.cart)
   const dispatch=useDispatch();
   const [count, setCount] = useState(0);
-  console.log(state.selectedItems);
 
   return (
     <>

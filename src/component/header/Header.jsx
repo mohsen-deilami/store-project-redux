@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 function Header() {
 const state = useSelector(store =>store.cart);
-console.log(state);
 
   return (
     <div className={styles.header}>
