@@ -18,8 +18,7 @@ export default function Card({ product }) {
     <>
       {product ? (
         <div className={styles.card}>
-          
-          <Link to={`/products/${product.id}`} className={styles.link}>
+         <Link to={`/products/${product.id}`} className={styles.link}>
         <img src={product.image} alt="" />
       </Link>
 

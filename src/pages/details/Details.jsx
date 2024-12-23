@@ -16,7 +16,6 @@ function Details() {
   useEffect(() => {
     dispatch(fetchProducts());
 
-
 }, []);
 product = useSelector((state) =>
     state.product.products.find((product) => product.id === +id))
